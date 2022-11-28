@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
+<<<<<<< HEAD
 {% block title %}
 Новости
 {% endblock title %}
 
 {% block content %}
+=======
+{% block content %}
+
+{% with range as double_range %}
+>>>>>>> 9044c7d (Lesson 3 (#2))
 
 {% if page_num %}
 <div class="card my-2">
@@ -18,6 +24,7 @@
 
   <div class="col-lg-8">
 
+<<<<<<< HEAD
     {% for item in news_qs %}
     <div class="card my-2">
       <div class="card-body">
@@ -27,6 +34,17 @@
         </h6>
         <p class="card-text">{{ item.preambule }}</p>
         <a href="{% url 'mainapp:news_detail' pk=item.pk %}" class="card-link">Подробнее</a>
+=======
+    {% for i in double_range %}
+    <div class="card my-2">
+      <div class="card-body">
+        <h5 class="card-title">{{ news_title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          {{ datetime_obj|date:"Y-m-d h-i-s" }}
+        </h6>
+        <p class="card-text">{{ news_preview }}</p>
+        <a href="#" class="card-link">Подробнее</a>
+>>>>>>> 9044c7d (Lesson 3 (#2))
       </div>
     </div>
     {% endfor %}
@@ -53,7 +71,8 @@
             <input type="date" class="form-control" name="dateTo">
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block">Фильтровать</button>
+          <button type="submit"
+            class="btn btn-primary btn-block">Фильтровать</button>
         </form>
       </div>
     </div>
@@ -65,12 +84,23 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+<<<<<<< HEAD
       <li class="page-item"><a class="page-link" href="#">1</a></li>
       <li class="page-item"><a class="page-link" href="#">2</a></li>
       {# <li class="page-item"><a class="page-link" href="#">3</a></li> #}
+=======
+      <li class="page-item"><a class="page-link" href="{% url 'mainapp:news_paginator' 1 %}?param1=foobar">1</a></li>
+      <li class="page-item"><a class="page-link" href="{% url 'mainapp:news_paginator' page=2 %}">2</a></li>
+      {# <li class="page-item"><a class="page-link" href="{% url 'mainapp:news_paginator' three %}">3</a></li> #}
+>>>>>>> 9044c7d (Lesson 3 (#2))
       <li class="page-item"><a class="page-link" href="#">Next</a></li>
     </ul>
   </nav>
 </div>
 
+<<<<<<< HEAD
+=======
+{% endwith %}
+
+>>>>>>> 9044c7d (Lesson 3 (#2))
 {% endblock content %}
